@@ -35,8 +35,8 @@ def load_checkpoint(filepath):
     model.classifier = checkpoint['classifier']
     model.load_state_dict(checkpoint['state_dict'])
     model.class_to_idx = checkpoint['class_to_idx']
-    model.epochs = checkpoint['epochs']
-    optimizer.load_state_dict(checkpoint['optimizer'])   
+    model.classifier = checkpoint['classifier']
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     return model
 
 model = load_checkpoint(save_dir)
@@ -76,7 +76,7 @@ def process_image(image):
 
 
 #Class prediction
-topk =in_args.topk
+topk =in_arg.topk
 def predict(image_path, model, topk=5):
     ''' Predict the class (or classes) of an image using a trained deep learning model.
     '''
@@ -130,7 +130,7 @@ def imshow(image, ax=None, title=None):
     return ax
 
 #Uses matplotlib to plot the probabilities for the top 5 classes as a bar graph, along with the input image.
-image_path = in_args.image_path
+image_path = in_arg.image_path
 img=Image.open(image_path)
 flower_number = image_path.split('/')[2]
 flower_name = cat_to_name[flower_number]
