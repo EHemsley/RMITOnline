@@ -9,7 +9,7 @@ from torch import optim
 from collections import OrderedDict
 import argparse    
 from get_input_args_predict import get_input_args
-from PIL import ImageFile
+from PIL import Image
 
 # Main program function defined below
 in_arg = get_input_args()
