@@ -15,7 +15,7 @@ from PIL import ImageFile
 in_arg = get_input_args()
 
 #Label mapping
-cat_to_name = in_args.category_names
+cat_to_name = in_arg.category_names
 import json
 with open(cat_to_name, 'r') as f:
     cat_to_name = json.load(f)
