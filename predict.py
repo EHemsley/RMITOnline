@@ -137,21 +137,8 @@ flower_name = cat_to_name[flower_number]
 top_probs,top_classes = predict(image_path, model)
 class_names = [cat_to_name[i] for i in top_classes]
 
-fig, (ax1, ax2) = plt.subplots(figsize=(10,12), ncols=2)
-
-ax1.imshow(img)
-ax1.axis('off')
-ax1.set_title((flower_name).title())
-
-ax2.set_aspect(0.25)
-ax2.barh(np.arange(5), top_probs)
-ax2.set_yticks(np.arange(5))
-ax2.set_yticklabels(class_names)
-ax2.set_title('Class Probability')
-ax2.set_xlim(0, 1.1)
-ax2.invert_yaxis()
-plt.tight_layout()
-
+print(top_probs)
+print (class_names)
 
 
 # Call to main function to run the program
