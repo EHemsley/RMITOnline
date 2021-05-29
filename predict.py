@@ -28,7 +28,7 @@ else:
     device = torch.device("cpu")
     
 # Function that loads a checkpoint and rebuilds the model
-save_dir = in_args.save_dir
+save_dir = in_arg.save_dir
 def load_checkpoint(filepath):
     checkpoint = torch.load(filepath)
     model = models.vgg16(pretrained=True)
